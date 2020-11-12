@@ -1,157 +1,104 @@
-import React, { useState, Fragment } from "react";
-import Error from "../Error/Error";
-import styled from "styled-components";
-import Exito from "../Exito/Exito";
-import PropTypes from "prop-types";
+import React, { useState, useContext } from 'react';
+import UsuarioContext from '../../context/usuario/usuarioContext';
+import Error from '../Error/Error';
+import Exito from '../Exito/Exito';
+import PropTypes from 'prop-types';
 
 //STYLED COMPONENTS
-const FormCreaUsuario = styled.form`
-  width: 500px;
-  height: 80vh;
-  border: 2px solid rgb(223, 9, 2);
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  align-items: center;
-  font-size: 18.5px;
-  background-color: rgba(0, 0, 0, 0.75);
-  margin: 0 auto;
-  h2 {
-    text-align: center;
-    font-size: 25px;
-    color: white;
-  }
-  input {
-    height: 30px;
-    width: 80%;
-    font-size: 20px;
-    margin: 0 auto;
-    padding: 10px;
-    border: none;
-  }
-  @media (max-width: 700px) {
-    width: 100%;
-  }
-`;
-const ButtonForm = styled.button`
-  width: 80%;
-  height: 40px;
-  font-size: 18.5px;
-  font-weight: 700;
-  margin: 0 auto;
-  background-color: rgb(223, 9, 2);
-  border: 2px solid black;
-  &:hover {
-    cursor: pointer;
-    background-color: black;
-    color: rgb(223, 9, 2);
-    border: 2px solid rgb(223, 9, 2);
-  }
-`;
 
-const Signup = ({
-  guardarCargando,
-  cargando,
-  stateNuevoUsuario,
-  guardarError,
-  error,
-  guardarExito,
-  exito,
-}) => {
-  //STATE PARA EL OBJETO DE PROFESOR
-  const [profesor, guardarProfesor] = useState({
-    nombre: "",
-    contraseña: "",
-    email: "",
-  });
+const Signup = () => {
+	const UsuariosdeContext = useContext(UsuarioContext);
+	const { creaUsuario } = UsuariosdeContext;
 
-  //FUNCION QUE COLOCA LOS ELEMENTOS EN EL STATE
-  const handleChange = (e) => {
-    //ACTUALIZA EL STATE
-    guardarProfesor({
-      ...profesor,
-      [e.target.name]: e.target.value,
-    });
-  };
-  //EXTRAEMOS LOS VALORES DE PROFESOR
-  const { nombre, contraseña, email } = profesor;
+	//STATE PARA EL OBJETO DE PROFESOR
+	const [ profesor, guardarProfesor ] = useState({
+		nombre: '',
+		contraseña: '',
+		email: ''
+	});
 
-  //SUBMIT DEL FORMULARIO CON LOS DATOS
-  const creaUsuario = (e) => {
-    //PARA QUE NO SE RECARGUE LA PAGINA
-    e.preventDefault();
-    //VALIDACION
-    if (
-      nombre.trim() === "" ||
-      contraseña.trim() === "" ||
-      email.trim() === ""
-    ) {
-      //MOSTRAR ERROR
-      guardarError(true);
-      return;
-    } else {
-      //MOSTRAR MENSAJE DE EXITO
-      guardarExito(true);
-      //MOSTRAR SPINNER
-      guardarCargando(true);
-      //NO MOSTRAR ERROR
-      guardarError(false);
+	//FUNCION QUE COLOCA LOS ELEMENTOS EN EL STATE
+	const handleChange = (e) => {
+		//ACTUALIZA EL STATE
+		guardarProfesor({
+			...profesor,
+			[e.target.name]: e.target.value
+		});
+	};
+	//EXTRAEMOS LOS VALORES DE PROFESOR
+	const { nombre, contraseña, email } = profesor;
 
-      //GUARDAR USUARIOS EN LOCAL STORAGE
-      setTimeout(() => {
-        guardarCargando(false);
-        localStorage.setItem(email, JSON.stringify(profesor));
-        stateNuevoUsuario(false);
-        guardarExito(false);
-      }, 3000);
-    }
-  };
+	//SUBMIT DEL FORMULARIO CON LOS DATOS
+	const handleSubmit = (e) => {
+		//PARA QUE NO SE RECARGUE LA PAGINA
+		e.preventDefault();	
+		//VALIDACION
+		if (nombre.trim() === '' || contraseña.trim() === '' || email.trim() === '') {
+			return;
+		} else {
+			//GUARDAR USUARIOS EN LOCAL STORAGE
+			setTimeout(() => {
+				creaUsuario(profesor);
+			}, 3000);
+		}
+	};
 
-  return (
-    <Fragment>
-      <FormCreaUsuario onSubmit={creaUsuario}>
-        {error ? (
-          <Error mensaje="COMPLETE TODOS LOS CAMPOS" />
-        ) : exito ? (
-          <Exito mensaje="USUARIO CREADO" />
-        ) : (
-          <h2>INGRESE SUS DATOS PARA REGISTRARSE</h2>
-        )}
-        <input
-          autoFocus
-          name="nombre"
-          value={nombre}
-          type="text"
-          placeholder="Nombre"
-          onChange={handleChange}
-        />
-        <input
-          name="email"
-          value={email}
-          type="email"
-          placeholder="E-mail"
-          onChange={handleChange}
-        />
-        <input
-          name="contraseña"
-          value={contraseña}
-          type="password"
-          placeholder="Contraseña"
-          onChange={handleChange}
-        />
-        <ButtonForm type="submit">CREAR USUARIO</ButtonForm>
-      </FormCreaUsuario>
-    </Fragment>
-  );
-};
+	return (
+		<section className="section">
+			<form className="columns is-mobile" onSubmit={handleSubmit}>
+				<div className="column is-9-mobile is-offset-1-mobile is-7-tablet is-offset-2-tablet is-4-desktop is-offset-4-desktop">
+					<div className="field">
+						<label className="label">Nombre</label>
+						<div className="control">
+							<input
+								className="input"
+								type="text"
+								placeholder="Ingresa tu nombre"
+								onChange={handleChange}
+								name="nombre"
+								value={nombre}
+							/>
+						</div>
+					</div>
+					<div className="field">
+						<label className="label">Email</label>
+						<div className="control">
+							<input
+								className="input"
+								type="email"
+								placeholder="Ingresa un e-mail"
+								onChange={handleChange}
+								name="email"
+								value={email}
+							/>
+						</div>
+					</div>
 
-Signup.propTypes = {
-  guardarCargando: PropTypes.func.isRequired,
-  cargando: PropTypes.bool.isRequired,
-  stateNuevoUsuario: PropTypes.func.isRequired,
-  guardarError: PropTypes.func.isRequired,
-  error: PropTypes.bool.isRequired,
-  guardarExito: PropTypes.func.isRequired,
-  exito: PropTypes.bool.isRequired,
+					<div className="field">
+						<label className="label">Contraseña</label>
+						<div className="control">
+							<input
+								className="input"
+								type="password"
+								placeholder="Ingresa una contraseña"
+								onChange={handleChange}
+								name="contraseña"
+								value={contraseña}
+							/>
+						</div>
+					</div>
+
+					<div className="field is-grouped is-grouped-centered">
+						<div className="control ">
+							<button type="submit" className="button is-small is-dark">
+								CREA USUARIO
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</section>
+	);
 };
 
 export default Signup;

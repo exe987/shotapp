@@ -1,0 +1,5 @@
+export const CREAR_USUARIO = 'CREAR_USUARIO';
+
+export const MOSTRAR_ERROR = 'MOSTRAR_ERROR';
+
+export const AGREGAR_TIRO = 'AGREGAR_TIRO';

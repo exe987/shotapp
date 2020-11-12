@@ -1,197 +1,162 @@
-import React, { useState } from "react";
-import Error from "../Error/Error";
-import Spinner from "../Spinner/Spinner";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import Error from '../Error/Error';
+import Spinner from '../Spinner/Spinner';
 
-//STYLED COMPONENTS
-const FormJugadores = styled.form`
-  width: 80%;
-  height: auto;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: grid;
-  grid-template-rows: 10vh, repeat(12, 5vh), 10vh;
-  align-items: center;
-  input {
-    width: 80%;
-    margin: 0 auto;
-    height: 20px;
-    font-size: 15px;
-    padding: 5px;
-    align-items: center;
-  }
-  h2 {
-    font-size: 30px;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(223, 9, 2);
-    display: grid;
-  }
-  button {
-    width: 80%;
-    margin: 0 auto;
-    height: 30px;
-    font-size: 20px;
-    padding: 5px;
-    background-color: rgb(223, 9, 2);
-    border: 3px solid black;
-    font-weight: 700;
-    &:hover {
-      cursor: pointer;
-      background-color: black;
-      color: rgb(223, 9, 2);
-      border: 3px solid rgb(223, 9, 2);
-    }
-  }
-`;
+const IngresoJugadores = () => {
 
-const IngresoJugadores = ({
-  agregarData,
-  dataSesion,
-  avanzaClase,
-  error,
-  guardarError,
-}) => {
-  //STATE OBJETO DE JUGADORES
-  const [jugadores, agregarJugadores] = useState({});
+	
 
-  //STATE DE SPINNER DE CARGA
-  const [cargando, guardarCargando] = useState(false);
 
-  //FUNCION QUE COLOCA LOS ELEMENTOS EN EL STATE
-  const handleChange = (e) => {
-    //ACTUALIZA EL STATE DE DATA PARA GUARDAR ESOS DATOS EN EL LOCALSTORAGE
-    agregarData({
-      ...dataSesion,
-      [e.target.name]: e.target.value,
-    });
 
-    //JUGADORES PARA PASAR AL COMPONENTE HIJO Y TRABAJAR CON ELLOS
-    agregarJugadores({
-      ...jugadores,
-      [e.target.name]: e.target.value,
-    });
-  };
+	return (
+		<section className="section">
+			<div className="columns">
+				<form className="column is-10-mobile is-10-tablet">
+					<legend>
+						<h2 className="title">INGRESE JUGADORES</h2>
+					</legend>
+					<div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 1</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 1"
+									name="jugador1"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 2</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 2"
+									name="jugador2"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 3</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 3"
+									name="jugador3"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 4</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 4"
+									name="jugador4"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 5</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 5"
+									name="jugador5"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 6</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 6"
+									name="jugador6"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 7</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 7"
+									name="jugador7"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 8</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 8"
+									name="jugador8"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 9</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 9"
+									name="jugador9"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 10</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 10"
+									name="jugador10"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 11</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 11"
+									name="jugador11"
+								/>
+							</div>
+						</div>
+						<div className="field mt-2">
+							<label className="label">JUGADOR 12</label>
+							<div className="control">
+								<input
+									className="input is-small is-warning"
+									type="text"
+									placeholder="Nombre jugador 12"
+									name="jugador12"
+								/>
+							</div>
+						</div>
 
-  //SUBMIT DE DATOS INGRESADOS
-  const ingresaJugadores = (e) => {
-    //PARA QUE NO SE RECARGUE LA PAGINA
-    e.preventDefault();
-    //SI NO INGRESAMOS LOS 12 JUGADORES DARA ERROR
-    if (Object.keys(jugadores).length !== 12) {
-      guardarError(true);
-      return;
-    } else {
-      //MOSTRAR SPINNER
-      guardarCargando(true);
-      //EXTRAER EMAIL DEL OBJETO DATASESION
-      const { email } = dataSesion;
-      //INICIA SESION
-      setTimeout(() => {
-        //GUARDAMOS ALUMNOS Y DATOS DEL PROFESOR EN LOCALSTORAGE
-        localStorage.setItem(email, JSON.stringify(dataSesion));
-        //AVANZAMOS A LA CLASE
-        avanzaClase(true);
-        //OCULTAMOS SPINNER
-        guardarCargando(false);
-      }, 3000);
-    }
-  };
-
-  return (
-    <FormJugadores onSubmit={ingresaJugadores}>
-      {error ? (
-        <Error mensaje="INGRESA LOS 12 JUGADORES!!!" />
-      ) : (
-        <h2>INGRESA JUGADORES</h2>
-      )}
-
-      <input
-        type="text"
-        name="jugador1"
-        onChange={handleChange}
-        placeholder="JUGADOR 1"
-      />
-      <input
-        type="text"
-        name="jugador2"
-        onChange={handleChange}
-        placeholder="JUGADOR 2"
-      />
-      <input
-        type="text"
-        name="jugador3"
-        onChange={handleChange}
-        placeholder="JUGADOR 3"
-      />
-      <input
-        type="text"
-        name="jugador4"
-        onChange={handleChange}
-        placeholder="JUGADOR 4"
-      />
-      <input
-        type="text"
-        name="jugador5"
-        onChange={handleChange}
-        placeholder="JUGADOR 5"
-      />
-      <input
-        type="text"
-        name="jugador6"
-        onChange={handleChange}
-        placeholder="JUGADOR 6"
-      />
-      <input
-        type="text"
-        name="jugador7"
-        onChange={handleChange}
-        placeholder="JUGADOR 7"
-      />
-      <input
-        type="text"
-        name="jugador8"
-        onChange={handleChange}
-        placeholder="JUGADOR 8"
-      />
-      <input
-        type="text"
-        name="jugador9"
-        onChange={handleChange}
-        placeholder="JUGADOR 9"
-      />
-      <input
-        type="text"
-        name="jugador10"
-        onChange={handleChange}
-        placeholder="JUGADOR 10"
-      />
-      <input
-        type="text"
-        name="jugador11"
-        onChange={handleChange}
-        placeholder="JUGADOR 11"
-      />
-      <input
-        type="text"
-        name="jugador12"
-        onChange={handleChange}
-        placeholder="JUGADOR 12"
-      />
-      <button type="submit">INGRESAR JUGADORES</button>
-      {cargando ? <Spinner /> : null}
-    </FormJugadores>
-  );
-};
-
-IngresoJugadores.propTypes = {
-  agregarData: PropTypes.func.isRequired,
-  dataSesion: PropTypes.object.isRequired,
-  avanzaClase: PropTypes.func.isRequired,
-  error: PropTypes.bool.isRequired,
-  guardarError: PropTypes.func.isRequired
+						<div className="field mt-2 has-text-centered">
+							<button type='submit' className="button is-warning is-small">INGRESAR</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	);
 };
 
 export default IngresoJugadores;

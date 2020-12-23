@@ -1,162 +1,136 @@
-import React, { useState } from 'react';
-import Error from '../Error/Error';
+import React, { useState, useContext } from 'react';
+import uuid from 'uuid/dist/v4';
 import Spinner from '../Spinner/Spinner';
+import JugadoresContext from '../../context/jugadores/jugadoresContext';
 
 const IngresoJugadores = () => {
-
-	
-
-
-
+	//DATOS CONTEXT
+	const jugadoresDeContext = useContext(JugadoresContext);
+	const { agregarJugador, nombres, spinner, mostrarSpinner } = jugadoresDeContext;
+	//ESTADOS LOCALES
+	const [ jugador, ingresoJugador ] = useState({
+		nombre: '',
+		id: null
+	});
+	const [ form, mostrarForm ] = useState(false);
+	//FUNCION PARA ABRIR Y CERRAR FORMULARIO
+	const openForm = () => {
+		if (form) {
+			mostrarForm(false);
+		} else {
+			mostrarForm(true);
+		}
+	};
+	//FUNCION QUE COLOCA LOS ELEMENTOS EN EL STATE
+	const handleChange = (e) => {
+		//ACTUALIZA EL STATE
+		ingresoJugador({
+			...jugador,
+			[e.target.name]: e.target.value
+		});
+	};
+	const { nombre } = jugador;
+	//SUBMIT DATOS
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		mostrarSpinner(true);
+		if (nombre.trim() === '' || nombres.includes(nombre)) {
+			setTimeout(() => {
+				mostrarSpinner(false);
+				alert('Ya existe un jugador con ese nombre!!!!');
+				ingresoJugador({
+					nombre: '',
+					id: null
+				});
+				return;
+			}, 2000);
+		} else {
+			setTimeout(() => {
+				jugador.id = uuid();
+				agregarJugador(jugador);
+				mostrarSpinner(false);
+				ingresoJugador({
+					nombre: '',
+					id: null
+				});
+			}, 2000);
+		}
+	};
 	return (
-		<section className="section">
-			<div className="columns">
-				<form className="column is-10-mobile is-10-tablet">
-					<legend>
-						<h2 className="title">INGRESE JUGADORES</h2>
-					</legend>
-					<div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 1</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 1"
-									name="jugador1"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 2</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 2"
-									name="jugador2"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 3</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 3"
-									name="jugador3"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 4</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 4"
-									name="jugador4"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 5</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 5"
-									name="jugador5"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 6</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 6"
-									name="jugador6"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 7</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 7"
-									name="jugador7"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 8</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 8"
-									name="jugador8"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 9</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 9"
-									name="jugador9"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 10</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 10"
-									name="jugador10"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 11</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 11"
-									name="jugador11"
-								/>
-							</div>
-						</div>
-						<div className="field mt-2">
-							<label className="label">JUGADOR 12</label>
-							<div className="control">
-								<input
-									className="input is-small is-warning"
-									type="text"
-									placeholder="Nombre jugador 12"
-									name="jugador12"
-								/>
-							</div>
-						</div>
-
-						<div className="field mt-2 has-text-centered">
-							<button type='submit' className="button is-warning is-small">INGRESAR</button>
+		<div>
+			{spinner ? <Spinner /> : null}
+			{!form ? (
+				<section className="hero shade is-large">
+					<div className="hero-body">
+						<div className="container has-text-centered">
+							<svg viewBox="0 0 960 300">
+								<symbol id="s-text">
+									<text text-anchor="middle" x="50%" y="80%">
+										SHOTAPP
+									</text>
+								</symbol>
+								<g className="g-ants">
+									<use xlinkHref="#s-text" className="text-copy" />
+									<use xlinkHref="#s-text" className="text-copy" />
+									<use xlinkHref="#s-text" className="text-copy" />
+									<use xlinkHref="#s-text" className="text-copy" />
+									<use xlinkHref="#s-text" className="text-copy" />
+								</g>
+							</svg>
+							<p className="subtitle">
+								<button type="button" className="button is-danger is-outlined mt-3" onClick={openForm}>
+									INGRESA CLASE
+								</button>
+							</p>
 						</div>
 					</div>
-				</form>
-			</div>
-		</section>
+				</section>
+			) : (
+				<section className="hero shade is-large">
+					<div className="hero-body">
+						<nav className="level">
+							<div className="level-item has-text-centered">
+								<div>
+									<p className="heading has-text-warning title is-3">JUGADORES</p>
+			<p className="title has-text-warning is-1">{nombres.length}</p>
+								</div>
+							</div>
+							<div className="level-item has-text-centered">
+								{' '}
+								<button type="submit" className="button is-warning is-outlined mt-3" onClick={openForm}>
+									IR A CLASE
+								</button>
+							</div>
+						</nav>
+						<div className="columns is-centered">
+							<form className="column is-6 is-half" onSubmit={handleSubmit}>
+								<div className="field">
+									<div className="control">
+										<input
+											autoFocus
+											className="input is-medium is-danger"
+											type="text"
+											placeholder={`INGRESE JUGADOR ${nombres.length+1}`}
+											name="nombre"
+											value={nombre}
+											onChange={handleChange}
+										/>
+									</div>
+								</div>
+								<div className="level ">
+									<div className="level-item has-text-centered">
+										{' '}
+										<button type="submit" className="button is-danger is-outlined mt-3">
+											INGRESA TU JUGADOR 
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+			)}
+		</div>
 	);
 };
-
 export default IngresoJugadores;

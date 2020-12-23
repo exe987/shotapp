@@ -3,7 +3,7 @@
   height: 60vh;
   margin: 20vh 30vw;
   position: absolute;
-
+  z-index: 1000;
   
 }
 

@@ -3,37 +3,49 @@ import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 
 const HeaderSesion = () => {
+	//ESTADOS LOCALES
+	const [ isActive, setisActive ] = useState(false);
+
 	return (
-		<section className="section shade">
-			<div className="container">
-				<div className="columns is-mobile is-vcentered">
-					<div className="column is-6-mobile is-7-tablet">
-						<figure className="image is-96x96">
-							<a>
-								<img src="https://i.pinimg.com/originals/70/d8/e2/70d8e2905ff447ab7138ca2dbd628119.png" />
-							</a>
-						</figure>
-					</div>
-					<div className="column is-4-mobile is-5-tablet ">
-						<div className="columns">
-							<a className="is-6 button is-danger is-small m-1">
-								<span className="icon">
-									<i className="fas fa-user-plus" />
-								</span>
-								<span>CREAR USUARIO</span>
-							</a>
-							<a className="is-6 button is-dark is-small m-1">
-								<span className="icon">
-									<i className="fas fa-sign-in-alt" />
-								</span>
-								<span>INICIAR SESION</span>
-							</a>
-						</div>
-					</div>
+		<nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+			<div className="navbar-brand">
+				<a className="navbar-item" href="!#">
+				<span  className="title is-2 has-text-white">SHOTAPP <i class="fas fa-basketball-ball"></i></span>	 
+				</a>
+				<a
+					onClick={() => {
+						setisActive(!isActive);
+					}}
+					role="button"
+					className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
+					aria-label="menu"
+					aria-expanded="false"
+					data-target="navbarBasicExample"
+				>
+					<span aria-hidden="true" />
+					<span aria-hidden="true" />
+					<span aria-hidden="true" />
+				</a>
+			</div>
+			<div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
+				<div className="navbar-start">
+					<a className="navbar-item">Home</a>
+					<a className="navbar-item">Resultados</a>
+				</div>
+				<div class="navbar-end">
+					<a className="navbar-item">
+						<span>
+							CREA USUARIO <i class="fas fa-user-plus" />
+						</span>
+					</a>
+					<a className="navbar-item">
+						<span>
+							INICIAR SESION <i class="fas fa-sign-in-alt" />
+						</span>
+					</a>
 				</div>
 			</div>
-		</section>
+		</nav>
 	);
 };
-
 export default HeaderSesion;

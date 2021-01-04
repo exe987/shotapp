@@ -1,19 +1,15 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import jugadoresReducer from './jugadoresReducer';
 import JugadoresContext from './jugadoresContext';
+
+import clienteAxios from '../../config/axios';
 import { AGREGAR_TIRO, AGREGAR_JUGADOR, MOSTRAR_SPINNER, ACTUALIZAR_NOMBRES } from '../../types/index';
 
 const Jugadores = (props) => {
 	const initialState = {
-		jugadores: [ { nombre: 'Andre', id: 1 }, { nombre: 'Exe', id: 2 }, { nombre: 'bu', id: 3 } ],
+		jugadores: [],
 		nombres: [],
-		ronda: [
-			{
-				acierto: { acierto: true, id: '1' },
-				distancia: { distancia: '5', id: '1' },
-				nombre: { nombre: 'Andre', id: '1' }
-			}
-		],
+		ronda: [],
 		spinner: false
 	};
 
@@ -21,23 +17,21 @@ const Jugadores = (props) => {
 	const [ state, dispatch ] = useReducer(jugadoresReducer, initialState);
 
 	//AGREGAR JUGADORES
-	const agregarJugador = (jugador) => {
+	const agregarJugador = async (jugador) => {
 		dispatch({
 			type: AGREGAR_JUGADOR,
 			payload: jugador
 		});
-		dispatch({
-			type: ACTUALIZAR_NOMBRES,
-			payload: jugador.nombre
-		});
-	};
+		await clienteAxios.post('./jugadores', jugador)
+    };
 
 	//TIROS
-	const agregarTiro = (tiro) => {
+	const agregarTiro = async (tiro) => {
 		dispatch({
 			type: AGREGAR_TIRO,
 			payload: tiro
 		});
+		await clienteAxios.post('./ronda', tiro)
 	};
 
 	//SPINNER

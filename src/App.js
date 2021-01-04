@@ -12,8 +12,8 @@ function App() {
 		<Router>
 			<Usuarios>
 				<Jugadores>
+					<HeaderSesion />
 					<div className="container">
-						<HeaderSesion />
 						<Switch>
 							<Route path="/dashboard">
 								<Dashboard />
@@ -22,9 +22,8 @@ function App() {
 								<Index />
 							</Route>
 						</Switch>
-
-						<Footer />
 					</div>
+					<Footer />
 				</Jugadores>
 			</Usuarios>
 		</Router>

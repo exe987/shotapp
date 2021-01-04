@@ -2,11 +2,14 @@ import React, { useState, useContext } from 'react';
 import uuid from 'uuid/dist/v4';
 import Spinner from '../Spinner/Spinner';
 import JugadoresContext from '../../context/jugadores/jugadoresContext';
-
+import UsuarioContext from '../../context/usuario/usuarioContext';
 const IngresoJugadores = () => {
 	//DATOS CONTEXT
 	const jugadoresDeContext = useContext(JugadoresContext);
-	const { agregarJugador, nombres, spinner, mostrarSpinner } = jugadoresDeContext;
+	const { agregarJugador, mostrarSpinner, jugadores, nombres, spinner } = jugadoresDeContext;
+
+	const usuariosDeContext = useContext(UsuarioContext);
+
 	//ESTADOS LOCALES
 	const [ jugador, ingresoJugador ] = useState({
 		nombre: '',
@@ -65,7 +68,7 @@ const IngresoJugadores = () => {
 						<div className="container has-text-centered">
 							<svg viewBox="0 0 960 300">
 								<symbol id="s-text">
-									<text text-anchor="middle" x="50%" y="80%">
+									<text textAnchor="middle" x="50%" y="80%">
 										SHOTAPP
 									</text>
 								</symbol>
@@ -92,7 +95,7 @@ const IngresoJugadores = () => {
 							<div className="level-item has-text-centered">
 								<div>
 									<p className="heading has-text-warning title is-3">JUGADORES</p>
-			<p className="title has-text-warning is-1">{nombres.length}</p>
+									<p className="title has-text-warning is-1">{jugadores.length}</p>
 								</div>
 							</div>
 							<div className="level-item has-text-centered">
@@ -103,14 +106,14 @@ const IngresoJugadores = () => {
 							</div>
 						</nav>
 						<div className="columns is-centered">
-							<form className="column is-6 is-half" onSubmit={handleSubmit}>
+							<form className="column is-5 is-half" onSubmit={handleSubmit}>
 								<div className="field">
 									<div className="control">
 										<input
 											autoFocus
-											className="input is-medium is-danger"
+											className="input is-small is-danger"
 											type="text"
-											placeholder={`INGRESE JUGADOR ${nombres.length+1}`}
+											placeholder={`INGRESE JUGADOR ${nombres.length + 1}`}
 											name="nombre"
 											value={nombre}
 											onChange={handleChange}
@@ -121,7 +124,7 @@ const IngresoJugadores = () => {
 									<div className="level-item has-text-centered">
 										{' '}
 										<button type="submit" className="button is-danger is-outlined mt-3">
-											INGRESA TU JUGADOR 
+											INGRESA TU JUGADOR
 										</button>
 									</div>
 								</div>

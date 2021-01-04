@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-
-
-const Login = ({}) => {
+const Login = ({ toggle, modal }) => {
 	//STATE PARA DATOS INGRESADOS POR EL USUARIO
 	const [ datos, datosIngresados ] = useState({
 		email: '',
@@ -21,14 +19,15 @@ const Login = ({}) => {
 	const { email, password } = datos;
 
 	return (
-		<section className="section">
-			<form className="columns is-mobile">
-				<div className="column is-9-mobile is-offset-1-mobile is-7-tablet is-offset-2-tablet is-4-desktop is-offset-4-desktop">
+		<section className={`modal ${modal ? `is-active` : null}`}>
+			<div className="modal-background" />
+			<div className="modal-content has-background-white columns">
+				<form className="column p-5 ">
 					<div className="field">
 						<label className="label">Email</label>
 						<div className="control">
 							<input
-								className="input"
+								className="input is-small"
 								type="email"
 								placeholder="Ingresa tu e-mail"
 								onChange={handleChange}
@@ -36,12 +35,11 @@ const Login = ({}) => {
 							/>
 						</div>
 					</div>
-
 					<div className="field">
 						<label className="label">Contraseña</label>
 						<div className="control">
 							<input
-								className="input"
+								className="input is-small"
 								type="password"
 								placeholder="Ingresa una contraseña"
 								onChange={handleChange}
@@ -52,13 +50,14 @@ const Login = ({}) => {
 
 					<div className="field is-grouped is-grouped-centered">
 						<div className="control ">
-							<button type="submit" className="button is-small is-dark">
+							<button type="submit" className="button is-small">
 								INICIAR SESION
 							</button>
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
+			<button className="modal-close is-large" aria-label="close" onClick={toggle} />
 		</section>
 	);
 };

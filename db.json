@@ -1,0 +1,62 @@
+{
+  "jugadores": [
+    {
+      "nombre": "dsd",
+      "id": "5cf430d8-f931-456f-a71b-d671617cb5a7"
+    },
+    {
+      "nombre": "ddsa",
+      "id": "eebbc815-b3ca-418d-b0cf-c0375107b6c9"
+    }
+  ],
+  "ronda": [
+    {
+      "nombre": "sdasd",
+      "acierto": "false",
+      "distancia": "2",
+      "id": 1
+    },
+    {
+      "nombre": "dsd",
+      "acierto": "true",
+      "distancia": "8",
+      "id": 25
+    },
+    {
+      "nombre": "dsd",
+      "acierto": "true",
+      "distancia": "2",
+      "id": 26
+    },
+    {
+      "nombre": "ddsa",
+      "acierto": "true",
+      "distancia": "2",
+      "id": 27
+    },
+    {
+      "nombre": "ddsa",
+      "acierto": "true",
+      "distancia": "8",
+      "id": 28
+    },
+    {
+      "nombre": "ddsa",
+      "acierto": "true",
+      "distancia": "8",
+      "id": 29
+    },
+    {
+      "nombre": "ddsa",
+      "acierto": "true",
+      "distancia": "2",
+      "id": 30
+    },
+    {
+      "nombre": "ddsa",
+      "acierto": "true",
+      "distancia": "2",
+      "id": 31
+    }
+  ]
+}

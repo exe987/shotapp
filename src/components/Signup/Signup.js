@@ -1,14 +1,11 @@
 import React, { useState, useContext } from 'react';
 import UsuarioContext from '../../context/usuario/usuarioContext';
-import Error from '../Error/Error';
-import Exito from '../Exito/Exito';
-import PropTypes from 'prop-types';
+import Swal from 'sweetalert2';
+import uuid from 'uuid/dist/v4';
 
-//STYLED COMPONENTS
-
-const Signup = () => {
+const Signup = ({ toggleb, modalb }) => {
 	const UsuariosdeContext = useContext(UsuarioContext);
-	const { creaUsuario } = UsuariosdeContext;
+	const { creaUsuario, error, cargando } = UsuariosdeContext;
 
 	//STATE PARA EL OBJETO DE PROFESOR
 	const [ profesor, guardarProfesor ] = useState({
@@ -31,72 +28,78 @@ const Signup = () => {
 	//SUBMIT DEL FORMULARIO CON LOS DATOS
 	const handleSubmit = (e) => {
 		//PARA QUE NO SE RECARGUE LA PAGINA
-		e.preventDefault();	
+		e.preventDefault();
 		//VALIDACION
 		if (nombre.trim() === '' || contraseña.trim() === '' || email.trim() === '') {
+			Swal.fire({
+				icon: 'error',
+				text: 'Completa los campos correctamente!!'
+			});
 			return;
 		} else {
-			//GUARDAR USUARIOS EN LOCAL STORAGE
-			setTimeout(() => {
-				creaUsuario(profesor);
-			}, 3000);
+			profesor.id = uuid();
+			creaUsuario(profesor);
+			//CERRAR EL MODAL
+		    toggleb()
 		}
 	};
 
 	return (
-		<section className="section">
-			<form className="columns is-mobile" onSubmit={handleSubmit}>
-				<div className="column is-9-mobile is-offset-1-mobile is-7-tablet is-offset-2-tablet is-4-desktop is-offset-4-desktop">
-					<div className="field">
-						<label className="label">Nombre</label>
-						<div className="control">
-							<input
-								className="input"
-								type="text"
-								placeholder="Ingresa tu nombre"
-								onChange={handleChange}
-								name="nombre"
-								value={nombre}
-							/>
+		<section className={`modal ${modalb ? `is-active` : null}`}>
+			<div className="modal-background" />
+			<div className="modal-content has-background-white columns is-mobile">
+				<form className="column is-10-mobile is-10-desktop p-5" onSubmit={handleSubmit}>
+					<div className="column">
+						<div className="field">
+							<label className="label">Nombre</label>
+							<div className="control">
+								<input
+									className="input"
+									type="text"
+									placeholder="Ingresa tu nombre"
+									onChange={handleChange}
+									name="nombre"
+									value={nombre}
+								/>
+							</div>
+						</div>
+						<div className="field">
+							<label className="label">Email</label>
+							<div className="control">
+								<input
+									className="input"
+									type="email"
+									placeholder="Ingresa un e-mail"
+									onChange={handleChange}
+									name="email"
+									value={email}
+								/>
+							</div>
+						</div>
+						<div className="field">
+							<label className="label">Contraseña</label>
+							<div className="control">
+								<input
+									className="input"
+									type="password"
+									placeholder="Ingresa una contraseña"
+									onChange={handleChange}
+									name="contraseña"
+									value={contraseña}
+								/>
+							</div>
+						</div>
+						<div className="field is-grouped is-grouped-centered">
+							<div className="control ">
+								<button type="submit" className="button is-small is-dark">
+									CREA USUARIO
+								</button>
+							</div>
 						</div>
 					</div>
-					<div className="field">
-						<label className="label">Email</label>
-						<div className="control">
-							<input
-								className="input"
-								type="email"
-								placeholder="Ingresa un e-mail"
-								onChange={handleChange}
-								name="email"
-								value={email}
-							/>
-						</div>
-					</div>
-
-					<div className="field">
-						<label className="label">Contraseña</label>
-						<div className="control">
-							<input
-								className="input"
-								type="password"
-								placeholder="Ingresa una contraseña"
-								onChange={handleChange}
-								name="contraseña"
-								value={contraseña}
-							/>
-						</div>
-					</div>
-
-					<div className="field is-grouped is-grouped-centered">
-						<div className="control ">
-							<button type="submit" className="button is-small is-dark">
-								CREA USUARIO
-							</button>
-						</div>
-					</div>
-				</div>
-			</form>
+				</form>
+			</div>
+			<button className="modal-close is-large" aria-label="close" onClick={toggleb} />
 		</section>
 	);
 };

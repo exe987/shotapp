@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 
 const HeaderSesion = () => {
-	//MODAL
-	const [modal, mostrarModal] = useState(false)
+	//ESTADOS DE MODAL
+	const [ modal, mostrarModal ] = useState(false);
+	const [ modalb, mostrarModalb ] = useState(false);
 
 	const toggle = () => {
-		if(modal){
-			mostrarModal(false)
-		}else{
-			mostrarModal(true)
+		if (modal) {
+			mostrarModal(false);
+		} else {
+			mostrarModal(true);
 		}
-	}
+	};
+
+	const toggleb = () => {
+		if (modalb) {
+			mostrarModalb(false);
+		} else {
+			mostrarModalb(true);
+		}
+	};
 
 	//ESTADOS LOCALES
 	const [ isActive, setisActive ] = useState(false);
 
 	return (
 		<nav className="navbar is-dark" role="navigation" aria-label="main navigation">
-			 <Login toggle= {toggle} modal= {modal}/>
+			{modal ? <Login toggle={toggle} modal={modal} /> : null}
+			{modalb ? <Signup toggleb={toggleb} modalb={modalb} /> : null}
+
 			<div className="navbar-brand">
-				<a className="navbar-item" href="!#">
-				<span  className="title is-2 has-text-white">SHOTAPP <i className="fas fa-basketball-ball"></i></span>	 
-				</a>
-				<a
+				<Link className="navbar-item" to='/'>
+					<span className="title is-2 has-text-white">
+						SHOTAPP <i className="fas fa-basketball-ball" />
+					</span>
+				</Link>
+				<Link
 					onClick={() => {
 						setisActive(!isActive);
 					}}
@@ -37,24 +51,24 @@ const HeaderSesion = () => {
 					<span aria-hidden="true" />
 					<span aria-hidden="true" />
 					<span aria-hidden="true" />
-				</a>
+				</Link>
 			</div>
 			<div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
 				<div className="navbar-start">
-					<a className="navbar-item">Home</a>
-					<a className="navbar-item">Resultados</a>
+					<Link className="navbar-item">Home</Link>
+					<Link className="navbar-item">Resultados</Link>
 				</div>
 				<div className="navbar-end">
-					<a className="navbar-item">
+					<Link className="navbar-item" onClick={toggleb}>
 						<span>
 							CREA USUARIO <i className="fas fa-user-plus" />
 						</span>
-					</a>
-					<a className="navbar-item" onClick={toggle}>
+					</Link>
+					<Link className="navbar-item" onClick={toggle}>
 						<span>
 							INICIAR SESION <i className="fas fa-sign-in-alt" />
 						</span>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</nav>

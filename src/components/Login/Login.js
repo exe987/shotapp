@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import UsuarioContext from '../../context/usuario/usuarioContext';
 import Swal from 'sweetalert2';
 
-
-
 const Login = ({ toggle, modal }) => {
 	const UsuariosdeContext = useContext(UsuarioContext);
-	const { iniciarSesion } = UsuariosdeContext;
+	const { iniciarSesion, sesion } = UsuariosdeContext;
 
+	const history = useHistory();
 
 	//STATE PARA DATOS INGRESADOS POR EL USUARIO
 	const [ datos, datosIngresados ] = useState({
@@ -26,19 +26,20 @@ const Login = ({ toggle, modal }) => {
 	//EXTRAEMOS LOS VALORES DE LOS DATOS INGRESADOS
 	const { email, password } = datos;
 
-	const handleSubmit = e => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
-		if( email.trim() === '' || password.trim() === '' ){
-			    Swal.fire({
+		if (email.trim() === '' || password.trim() === '') {
+			Swal.fire({
 				icon: 'error',
 				text: 'Completa los campos correctamente!!'
 			});
 			return;
-		}else{
-			iniciarSesion(datos)
-		}	
-		
-	}
+		} else {
+			iniciarSesion(datos);
+			toggle();
+			history.push('/dashboard');
+		}
+	};
 
 	return (
 		<section className={`modal ${modal ? `is-active` : null}`}>

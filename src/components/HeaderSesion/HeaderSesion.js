@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import UsuarioContext from '../../context/usuario/usuarioContext';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 
 const HeaderSesion = () => {
+	const UsuariosdeContext = useContext(UsuarioContext);
+	const { sesion, } = UsuariosdeContext;
+
 	//ESTADOS DE MODAL
 	const [ modal, mostrarModal ] = useState(false);
 	const [ modalb, mostrarModalb ] = useState(false);
@@ -33,7 +37,7 @@ const HeaderSesion = () => {
 			{modalb ? <Signup toggleb={toggleb} modalb={modalb} /> : null}
 
 			<div className="navbar-brand">
-				<Link className="navbar-item" to='/'>
+				<Link className="navbar-item" to="/">
 					<span className="title is-2 has-text-white">
 						SHOTAPP <i className="fas fa-basketball-ball" />
 					</span>
@@ -58,18 +62,28 @@ const HeaderSesion = () => {
 					<Link className="navbar-item">Home</Link>
 					<Link className="navbar-item">Resultados</Link>
 				</div>
-				<div className="navbar-end">
-					<Link className="navbar-item" onClick={toggleb}>
-						<span>
-							CREA USUARIO <i className="fas fa-user-plus" />
-						</span>
-					</Link>
-					<Link className="navbar-item" onClick={toggle}>
-						<span>
-							INICIAR SESION <i className="fas fa-sign-in-alt" />
-						</span>
-					</Link>
-				</div>
+				{sesion ? (
+					<div className="navbar-end">
+						<Link className="navbar-item">
+							<span>
+								CERRAR SESION <i className="fas fa-user-plus" />
+							</span>
+						</Link>
+					</div>
+				) : (
+					<div className="navbar-end">
+						<Link className="navbar-item" onClick={toggleb}>
+							<span>
+								CREA USUARIO <i className="fas fa-user-plus" />
+							</span>
+						</Link>
+						<Link className="navbar-item" onClick={toggle}>
+							<span>
+								INICIAR SESION <i className="fas fa-sign-in-alt" />
+							</span>
+						</Link>
+					</div>
+				)}
 			</div>
 		</nav>
 	);

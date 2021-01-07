@@ -17,7 +17,9 @@ const Usuarios = (props) => {
 		usuarios: [],
 		usuario: null,
 		error: false,
-		cargando: false
+		cargando: false,
+		sesion: false,
+		dataSesion: []
 	};
 
 	const [ state, dispatch ] = useReducer(usuarioReducer, initialState);
@@ -28,15 +30,26 @@ const Usuarios = (props) => {
 			type: CREAR_USUARIO,
 			payload: usuario
 		});
+		//VERIFICAR SI EL USUARIO EXISTE
+
 		try {
-			await clienteAxios.post('./usuarios', usuario);
-			dispatch({
-				type: EXITO_ENTRADA_USUARIO
-			});
-			Swal.fire({
-				icon: 'success',
-				text: 'Usuario creado correctamente!!'
-			});
+			const { email } = usuario;
+			const respuesta = await(await clienteAxios.get('./usuarios')).data.map((user) => user.email);
+			if (respuesta.includes(email)) {
+				Swal.fire({
+					icon: 'error',
+					text: 'Usuario existente!!'
+				});
+			} else {
+				await clienteAxios.post('./usuarios', usuario);
+				dispatch({
+					type: EXITO_ENTRADA_USUARIO
+				});
+				Swal.fire({
+					icon: 'success',
+					text: 'Usuario creado correctamente!!'
+				});
+			}
 		} catch (error) {
 			console.log(error);
 			Swal.fire({
@@ -54,15 +67,29 @@ const Usuarios = (props) => {
 			type: INICIAR_SESION
 		});
 		try {
-			const {email, password} = usuario
-			const respuesta = await clienteAxios.get('/usuarios')
-			const found = respuesta.data.find(usuario  => usuario.email === email);
-			console.log(found);
+			//VERIFICAR SI EL USUARIO EXISTE
+			const { email, password } = usuario;
+			const respuesta = await(await clienteAxios.get('./usuarios')).data.map((user) => user.email);
+			if (respuesta.includes(email)) {
+				
+			} else {
+				Swal.fire({
+					icon: 'error',
+					text: 'Usuario inexistente!!'
+				});
+				
+			}
+
 			dispatch({
-				type: INICIO_SESION_EXITO
+				type: INICIO_SESION_EXITO,
+				
 			});
-			
-		} catch (error) {}
+		} catch (error) {
+			console.log(error);
+			dispatch({
+				type: INICIO_SESION_ERROR
+			});
+		}
 	};
 
 	return (
@@ -70,6 +97,7 @@ const Usuarios = (props) => {
 			value={{
 				error: state.error,
 				cargando: state.cargando,
+				sesion: state.sesion,
 				creaUsuario,
 				iniciarSesion
 			}}

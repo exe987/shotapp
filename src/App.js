@@ -13,16 +13,18 @@ function App() {
 			<Usuarios>
 				<Jugadores>
 					<HeaderSesion />
-					<div className="container">
+					
 						<Switch>
+						<div className="container">
+						<Route exact path="/">
+								<Index />
+							</Route>
 							<Route path="/dashboard">
 								<Dashboard />
 							</Route>
-							<Route path="/">
-								<Index />
-							</Route>
+							</div>
 						</Switch>
-					</div>
+					
 					<Footer />
 				</Jugadores>
 			</Usuarios>

@@ -1,11 +1,18 @@
-import { CREAR_USUARIO,  ERROR_ENTRADA_USUARIO, EXITO_ENTRADA_USUARIO    } from '../../types/index';
+import {
+	CREAR_USUARIO,
+	ERROR_ENTRADA_USUARIO,
+	EXITO_ENTRADA_USUARIO,
+	INICIAR_SESION,
+	INICIO_SESION_EXITO,
+	INICIO_SESION_ERROR
+} from '../../types/index';
 
 const usuarioReducer = (state, action) => {
 	switch (action.type) {
 		case CREAR_USUARIO: {
 			return {
 				...state,
-				usuarios: [...state.usuarios, action.payload ],
+				usuarios: [ ...state.usuarios, action.payload ],
 				error: false,
 				cargando: true
 			};
@@ -15,7 +22,7 @@ const usuarioReducer = (state, action) => {
 				...state,
 				error: false,
 				cargando: false
-			}
+			};
 		}
 		case ERROR_ENTRADA_USUARIO: {
 			return {
@@ -24,7 +31,27 @@ const usuarioReducer = (state, action) => {
 				cargando: false
 			};
 		}
-
+		case INICIAR_SESION:{
+			return {
+				...state,
+				cargando: true
+			}
+		}
+		case INICIO_SESION_EXITO: {
+			return{
+				...state,
+				cargando: false,
+				sesion: true, 
+				dataSesion: action.payload
+			}
+		}
+		case INICIO_SESION_ERROR: {
+			return{
+				...state,
+				cargando: false,
+				sesion: false
+			}
+		}
 		default:
 			return state;
 	}

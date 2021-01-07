@@ -36,11 +36,16 @@ const Signup = ({ toggleb, modalb }) => {
 				text: 'Completa los campos correctamente!!'
 			});
 			return;
+		} else if (contraseña.length < 4) {
+			Swal.fire({
+				icon: 'error',
+				text: 'Tu contraseña debe tener mas de 4 caracteres!!'
+			});
 		} else {
 			profesor.id = uuid();
 			creaUsuario(profesor);
 			//CERRAR EL MODAL
-		    toggleb()
+			toggleb();
 		}
 	};
 

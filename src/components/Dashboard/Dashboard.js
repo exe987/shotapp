@@ -1,21 +1,18 @@
-import React, { Fragment, useContext } from 'react';
-import IngresoJugadores from '../IngresoJugadores/IngresoJugadores';
-import DatosJugador from '../DatosJugador/DatosJugador';
-import JugadoresContext from '../../context/jugadores/jugadoresContext';
+import React from "react";
+import DatosJugador from "../DatosJugador/DatosJugador";
+import DatosClase from "../DatosClase/DatosClase";
 
 const Dashboard = () => {
-	//DATOS CONTEXT
-	const jugadoresDeContext = useContext(JugadoresContext);
-	const { jugadores, ronda } = jugadoresDeContext;
-
-	return (
-		<Fragment>
-			<IngresoJugadores />
-			<div className="container is-fullhd">
-				<DatosJugador />
-			</div>
-		</Fragment>
-	);
+  return (
+    <div className="container is-fullhd">
+      <section className="hero is-medium">
+        <DatosClase />
+        <div className="hero-body">
+          <DatosJugador />
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default Dashboard;

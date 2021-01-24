@@ -63,13 +63,13 @@ body{
 .cancha {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	width: 75%;
-	height: 200px;
-	margin-left: 12.5%;
+	width: 50%;
+	height: 150px;
+	margin-left: 25%;
 }
 .cancha img {
 	width: 100%;
-	height: 200px;
+	height: 150px;
 }
 
 .sector {
@@ -77,7 +77,7 @@ body{
 	grid-template-rows: 1fr 1fr;
 	position: absolute;
 	width: 100%;
-	height: 200px;
+	height: 150px;
 	align-items: center;
 	box-sizing: border-box;
 }
@@ -87,7 +87,7 @@ body{
 	justify-items: center;
 	width: 100%;
 	height: 100%;
-	box-sizing: border-box;
+	box-sizing: border-box;				
 	align-items: center;
 }
 
@@ -166,4 +166,8 @@ svg {
 
 @keyframes stroke-offset{
 	100% {stroke-dashoffset: -35%;}
+}
+.fija{
+	position: fixed;
+	z-index: 30;
 }

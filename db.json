@@ -1,16 +1,74 @@
 {
   "jugadores": [
     {
-      "nombre": "dsd",
-      "id": "5cf430d8-f931-456f-a71b-d671617cb5a7"
+      "nombre": "dasdas",
+      "id": "b573e7b7-55bc-41e8-af8b-e99c323b2d3c",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
     },
     {
-      "nombre": "ddsa",
-      "id": "eebbc815-b3ca-418d-b0cf-c0375107b6c9"
+      "nombre": "asd",
+      "id": "0d0a6243-0cb4-41d2-b847-12dedb347b40",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
     },
     {
-      "nombre": "sdad",
-      "id": "0e2ba5cf-e80b-44c5-a5f7-a2d3183b2f0c"
+      "nombre": "as",
+      "id": "ee1f5224-ed94-4edf-b31d-197f8aab0901",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dsad",
+      "id": "aa71d2af-8fa7-47db-9a3a-0568d3cb8b87",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "wdsa",
+      "id": "4ca9942e-203e-4aa9-81cb-72df949333b8",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "wsdxsa",
+      "id": "2e333c6f-e43a-4824-b4d0-176a69618fbd",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "gfg",
+      "id": "390e359e-8483-469b-b8b3-30422bb303ab",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "sad",
+      "id": "3e3a8888-59ff-4f83-a770-d50c281c1832",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "Rerra Bu",
+      "id": "45c1a6b2-83a3-4a5f-9fde-1758cb1d105d",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "aaa",
+      "id": "9e8e0ebe-4f18-449d-9680-fdce979a7305",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "vb",
+      "id": "0f5fe426-1b0e-4ad2-be86-e4d33b451e58",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "Rerra Bu",
+      "id": "bde2d18a-640c-4f1e-aa5b-42c70957521f",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dwqdw",
+      "id": "a50a8264-ba79-4846-8643-a4aa422aae21",
+      "usuario": "fc6ea778-fa9d-4537-8036-1f1aa96b5bef"
+    },
+    {
+      "nombre": "dwqdwqd",
+      "id": "5011f7bb-22e1-436e-815d-aac30eafac2f",
+      "usuario": "fc6ea778-fa9d-4537-8036-1f1aa96b5bef"
     }
   ],
   "ronda": [
@@ -19,44 +77,86 @@
       "acierto": "false",
       "distancia": "2",
       "id": 1
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "true",
+      "distancia": "2",
+      "id": 2
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "true",
+      "distancia": "2",
+      "id": 3
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "false",
+      "distancia": "8",
+      "id": 4
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "false",
+      "distancia": "5",
+      "id": 5
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "false",
+      "distancia": "2",
+      "id": 6
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "false",
+      "distancia": "2",
+      "id": 7
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "false",
+      "distancia": "2",
+      "id": 8
+    },
+    {
+      "nombre": "SDAd",
+      "acierto": "false",
+      "distancia": "2",
+      "id": 9
+    },
+    {
+      "nombre": "dasdas",
+      "acierto": "false",
+      "distancia": "2",
+      "id": 10
+    },
+    {
+      "nombre": "dwa",
+      "acierto": "true",
+      "distancia": "5",
+      "id": 11
+    },
+    {
+      "nombre": "dwa",
+      "acierto": "false",
+      "distancia": "8",
+      "id": 12
     }
   ],
   "usuarios": [
     {
-      "nombre": "sdasd",
-      "contraseña": "pepe",
+      "nombre": "exe",
+      "contraseña": "aaaaaa",
       "email": "exe987@hotmail.com",
-      "id": "27e4ada2-bf1c-4125-bd53-29cd6523f8b3"
+      "id": "fc6ea778-fa9d-4537-8036-1f1aa96b5bef"
     },
     {
-      "nombre": "sdasd",
-      "contraseña": "dwss",
-      "email": "exe987@hotmail.com",
-      "id": "3a05bc6f-592b-44c8-a310-12d139bda205"
-    },
-    {
-      "nombre": "sdasd",
-      "contraseña": "dswdas",
-      "email": "exe987@hotmail.com",
-      "id": "3cc41561-95a5-40d6-9668-5f3d0e40bf51"
-    },
-    {
-      "nombre": "dwsdws",
-      "contraseña": "wdas",
-      "email": "exe987@hotmail.com",
-      "id": "ce33ace3-e30c-4bb3-a416-2214a969c471"
-    },
-    {
-      "nombre": "sdasd",
-      "contraseña": "kjdwsds",
-      "email": "exe987ss@hotmail.com",
-      "id": "c9ec8762-e27f-4afc-bd77-6958ccc535ce"
-    },
-    {
-      "nombre": "dwsdws",
-      "contraseña": "ssssss",
-      "email": "exe987@hotmail.comss",
-      "id": "1ecb755b-4700-40d2-816b-e26b682b9f24"
+      "nombre": "bu",
+      "contraseña": "aaaa",
+      "email": "rerrabu@gomiel.com",
+      "id": "ab208476-6c44-4e28-a940-621852e481fd"
     }
   ]
 }

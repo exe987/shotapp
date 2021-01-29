@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect, Fragment } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import JugadoresContext from "../../context/jugadores/jugadoresContext";
 import UsuarioContext from "../../context/usuario/usuarioContext";
+import Swal from "sweetalert2";
 const DatosJugador = () => {
   //DATOS CONTEXT
   const jugadoresDeContext = useContext(JugadoresContext);
@@ -12,17 +13,13 @@ const DatosJugador = () => {
     eliminarJugador,
     jugadoresUsuario,
   } = jugadoresDeContext;
-
   const UsuariosdeContext = useContext(UsuarioContext);
   const { dataSesion } = UsuariosdeContext;
-
   //STATE TIRO JUGADOR
   const [desempeño, desempeñoJugador] = useState({
-    nombre: null,
     acierto: false,
     distancia: null,
   });
-
   //FUNCION QUE COLOCA LOS ELEMENTOS EN EL STATE
   const handleClick = (e) => {
     //ACTUALIZA EL STATE
@@ -31,28 +28,37 @@ const DatosJugador = () => {
       [e.target.name]: e.target.value,
     });
   };
-
   //EXTRAER ELEMENTOS DEL ESTADO LOCAL
-  let { nombre, acierto, distancia } = desempeño;
+  let { acierto, distancia } = desempeño;
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      nombre.trim() === "" ||
-      acierto.trim() === "" ||
-      distancia.trim() === ""
-    ) {
+    if (acierto === null || distancia === null) {
+      Swal.fire({
+        icon: "error",
+        text: "Complete correctamente los datos de tiro!!",
+      });
       return null;
     } else {
+      desempeño.distancia = Number(distancia);
+      desempeño.nombre = jugadorSeleccionado[0].nombre;
+      desempeño.usuario = dataSesion.id;
       agregarTiro(desempeño);
+      desempeñoJugador({
+        acierto: false,
+        distancia: null,
+      });
+      cancelarSeleccionarJugador();
     }
   };
-
   return (
     <Fragment>
       <div className="columns is-desktop is-multiline is-centered">
         {!jugadorSeleccionado ? (
           jugadoresUsuario.map((jugador) => (
-            <div className="column card m-2  is-3-desktop has-background-dark">
+            <div
+              key={jugador.nombre}
+              className="column card m-2 is-3-desktop has-background-dark"
+            >
               <div className="card-header-title title is-6 has-text-white">
                 {jugador.nombre.toUpperCase()}
               </div>
@@ -78,7 +84,6 @@ const DatosJugador = () => {
           ))
         ) : (
           <form
-            key={jugadorSeleccionado[0].nombre}
             className={`card column is-4 has-background-dark`}
             onSubmit={handleSubmit}
           >
@@ -89,7 +94,6 @@ const DatosJugador = () => {
               <button
                 type="button"
                 name="nombre"
-                value={jugadorSeleccionado[0].nombre}
                 onClick={cancelarSeleccionarJugador}
                 className="button is-link is-small is-fullwidth is-outlined"
               >
@@ -179,5 +183,4 @@ const DatosJugador = () => {
     </Fragment>
   );
 };
-
 export default DatosJugador;

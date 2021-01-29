@@ -11,8 +11,8 @@ import {
   CANCELAR_SELECCIONAR_JUGADOR,
   OBTENER_JUGADORES,
   ELIMINAR_JUGADOR,
+  OBTENER_TIROS_USUARIO,
   MOSTRAR_SPINNER,
-  ACTUALIZAR_NOMBRES,
 } from "../../types/index";
 
 const Jugadores = (props) => {
@@ -22,12 +22,12 @@ const Jugadores = (props) => {
     jugadoresUsuario: [],
     nombres: [],
     ronda: [],
+    aciertoRonda: [],
+    tirosPorUsuario: [],
     spinner: false,
   };
-
   //REDUCER
   const [state, dispatch] = useReducer(jugadoresReducer, initialState);
-
   //SELECCIONAR JUGADOR
   const seleccionarJugador = (jugador) => {
     dispatch({
@@ -77,26 +77,58 @@ const Jugadores = (props) => {
   //BORRAR JUGADOR
   const eliminarJugador = async (id, usuario) => {
     try {
-      await clienteAxios.delete(`/jugadores/${id}`, {
-        params: { usuario },
+      Swal.fire({
+        title: `Estás seguro de querer borrar este jugador?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Borrar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          clienteAxios.delete(`/jugadores/${id}`, {
+            params: { usuario },
+          });
+          dispatch({
+            type: ELIMINAR_JUGADOR,
+            payload: id,
+          });
+          Swal.fire(`El jugador se ha borrado`);
+        }
       });
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        icon: "error",
+        text: "No se pudo agregar el tiro!!",
+      });
+    }
+  };
+  //TIROS
+  const agregarTiro = async (tiro) => {
+    try {
       dispatch({
-        type: ELIMINAR_JUGADOR,
-        payload: id
-      })
+        type: AGREGAR_TIRO,
+        payload: tiro,
+      });
+      await clienteAxios.post("./tiros", tiro);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //OBTENER TIROS POR USUARIO
+  const obtenerTirosPorUsuario = async id => {
+    const respuesta = await clienteAxios.get(`./tiros?usuario=${id}`);
+    try {
+      dispatch({
+        type: OBTENER_TIROS_USUARIO,
+        payload: respuesta.data,
+      });
+     
     } catch (error) {
       console.log(error);
     }
   }
-
-  //TIROS
-  const agregarTiro = async (tiro) => {
-    dispatch({
-      type: AGREGAR_TIRO,
-      payload: tiro,
-    });
-    await clienteAxios.post("./ronda", tiro);
-  };
   //SPINNER
   const mostrarSpinner = (estado) => {
     dispatch({
@@ -113,13 +145,16 @@ const Jugadores = (props) => {
         nombres: state.nombres,
         jugadorSeleccionado: state.jugadorSeleccionado,
         jugadoresUsuario: state.jugadoresUsuario,
+        tirosPorUsuario: state.tirosPorUsuario,
+        aciertoRonda: state.aciertoRonda,
         agregarJugador,
         seleccionarJugador,
         cancelarSeleccionarJugador,
         agregarTiro,
         mostrarSpinner,
         obtenerJugadores,
-        eliminarJugador
+        eliminarJugador,
+        obtenerTirosPorUsuario
       }}
     >
       {props.children}

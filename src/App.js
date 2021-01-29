@@ -14,8 +14,9 @@ function App() {
       <Usuarios>
         <Jugadores>
           <HeaderSesion />
-          <Switch>
+          
             <div className="container">
+            <Switch>
               <Route exact path="/">
                 <Index />
               </Route>
@@ -25,8 +26,9 @@ function App() {
               <Route path="/ingreso">
                 <IngresoJugadores />
               </Route>
+              </Switch>
             </div>
-          </Switch>
+          
 
           <Footer />
         </Jugadores>

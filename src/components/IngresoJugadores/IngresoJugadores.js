@@ -20,7 +20,8 @@ const IngresoJugadores = () => {
 
   useEffect(() => {
     obtenerJugadores(dataSesion.id);
-  }, []);
+    // eslint-disable-next-line
+  }, [dataSesion]);
 
   //ESTADOS LOCALES
   const [jugador, ingresoJugador] = useState({
@@ -127,7 +128,9 @@ const IngresoJugadores = () => {
                       autoFocus
                       className="input is-small is-danger"
                       type="text"
-                      placeholder={`INGRESE JUGADOR ${jugadoresUsuario.length + 1}`}
+                      placeholder={`INGRESE JUGADOR ${
+                        jugadoresUsuario.length + 1
+                      }`}
                       name="nombre"
                       value={nombre}
                       onChange={handleChange}

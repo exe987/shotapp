@@ -46,10 +46,10 @@ const HeaderSesion = () => {
           </span>
         </a>
         <a
+          href="/#"
           onClick={() => {
             setisActive(!isActive);
           }}
-          role="button"
           className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
           aria-label="menu"
           aria-expanded="false"
@@ -72,10 +72,11 @@ const HeaderSesion = () => {
             <Link className="navbar-item" to="/dashboard">
               IR A CLASE!!!
             </Link>
-            <a className="navbar-item">
+            <a href="/#" className="navbar-item">
               HOLA {dataSesion.nombre.toUpperCase()}!!!
             </a>
             <a
+              href="/#"
               className="navbar-item"
               onClick={() => cierreDeSesion(dataSesion)}
             >
@@ -86,12 +87,12 @@ const HeaderSesion = () => {
           </div>
         ) : (
           <div className="navbar-end">
-            <a className="navbar-item" onClick={toggleb}>
+            <a href="/#" className="navbar-item" onClick={toggleb}>
               <span>
                 CREA USUARIO <i className="fas fa-user-plus" />
               </span>
             </a>
-            <a className="navbar-item" onClick={toggle}>
+            <a href="/#" className="navbar-item" onClick={toggle}>
               <span>
                 INICIAR SESION <i className="fas fa-sign-in-alt" />
               </span>

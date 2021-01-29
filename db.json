@@ -1,28 +1,8 @@
 {
   "jugadores": [
     {
-      "nombre": "dasdas",
-      "id": "b573e7b7-55bc-41e8-af8b-e99c323b2d3c",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
-    },
-    {
-      "nombre": "asd",
-      "id": "0d0a6243-0cb4-41d2-b847-12dedb347b40",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
-    },
-    {
       "nombre": "as",
       "id": "ee1f5224-ed94-4edf-b31d-197f8aab0901",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
-    },
-    {
-      "nombre": "dsad",
-      "id": "aa71d2af-8fa7-47db-9a3a-0568d3cb8b87",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
-    },
-    {
-      "nombre": "wdsa",
-      "id": "4ca9942e-203e-4aa9-81cb-72df949333b8",
       "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
     },
     {
@@ -41,11 +21,6 @@
       "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
     },
     {
-      "nombre": "Rerra Bu",
-      "id": "45c1a6b2-83a3-4a5f-9fde-1758cb1d105d",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
-    },
-    {
       "nombre": "aaa",
       "id": "9e8e0ebe-4f18-449d-9680-fdce979a7305",
       "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
@@ -53,11 +28,6 @@
     {
       "nombre": "vb",
       "id": "0f5fe426-1b0e-4ad2-be86-e4d33b451e58",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
-    },
-    {
-      "nombre": "Rerra Bu",
-      "id": "bde2d18a-640c-4f1e-aa5b-42c70957521f",
       "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
     },
     {
@@ -69,80 +39,422 @@
       "nombre": "dwqdwqd",
       "id": "5011f7bb-22e1-436e-815d-aac30eafac2f",
       "usuario": "fc6ea778-fa9d-4537-8036-1f1aa96b5bef"
+    },
+    {
+      "nombre": "sadsd",
+      "id": "dad25f2f-7793-4b2f-bcb1-32651291f4ae",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dwsafd",
+      "id": "dd6f0442-584f-45b1-a0ad-1aa4664bda16",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "50",
+      "id": "33410bdd-b742-403c-b85a-148117a8bb64",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
     }
   ],
-  "ronda": [
+  "tiros": [
     {
-      "nombre": "sdasd",
-      "acierto": "false",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 1
     },
     {
-      "nombre": "SDAd",
-      "acierto": "true",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 2
     },
     {
-      "nombre": "SDAd",
-      "acierto": "true",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 3
     },
     {
-      "nombre": "SDAd",
-      "acierto": "false",
-      "distancia": "8",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 4
     },
     {
-      "nombre": "SDAd",
-      "acierto": "false",
-      "distancia": "5",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 5
     },
     {
-      "nombre": "SDAd",
-      "acierto": "false",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 8,
+      "nombre": "vb",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 6
     },
     {
-      "nombre": "SDAd",
-      "acierto": "false",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 7
     },
     {
-      "nombre": "SDAd",
-      "acierto": "false",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 8,
+      "nombre": "gfg",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 8
     },
     {
-      "nombre": "SDAd",
-      "acierto": "false",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 9
     },
     {
-      "nombre": "dasdas",
-      "acierto": "false",
-      "distancia": "2",
+      "acierto": false,
+      "distancia": 8,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 10
     },
     {
-      "nombre": "dwa",
-      "acierto": "true",
-      "distancia": "5",
+      "acierto": false,
+      "distancia": 8,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 11
     },
     {
-      "nombre": "dwa",
-      "acierto": "false",
-      "distancia": "8",
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 12
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "gfg",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 13
+    },
+    {
+      "acierto": false,
+      "distancia": 2,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 14
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "gfg",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 15
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 16
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 17
+    },
+    {
+      "acierto": false,
+      "distancia": 2,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 18
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 19
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 20
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 21
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "gfg",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 22
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 23
+    },
+    {
+      "acierto": false,
+      "distancia": 5,
+      "nombre": "gfg",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 24
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 25
+    },
+    {
+      "acierto": "false",
+      "distancia": 8,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 26
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 27
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "sad",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 28
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "sad",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 29
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 30
+    },
+    {
+      "acierto": "true",
+      "distancia": 8,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 31
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 32
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "gfg",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 33
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 34
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 35
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 36
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 37
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 38
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 39
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 40
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 41
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 42
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 43
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 44
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 45
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 46
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 47
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 48
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 49
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 50
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 51
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 52
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "dwsafd",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 53
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 54
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 55
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 56
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 57
     }
   ],
   "usuarios": [

@@ -4,11 +4,10 @@ import {
   SELECCIONAR_JUGADOR,
   MOSTRAR_SPINNER,
   OBTENER_JUGADORES,
-  ACTUALIZAR_NOMBRES,
   CANCELAR_SELECCIONAR_JUGADOR,
   ELIMINAR_JUGADOR,
+  OBTENER_TIROS_USUARIO,
 } from "../../types/index";
-
 const jugadoresReducer = (state, action) => {
   switch (action.type) {
     case AGREGAR_JUGADOR:
@@ -16,18 +15,12 @@ const jugadoresReducer = (state, action) => {
         ...state,
         jugadores: [...state.jugadores, action.payload],
       };
-    case AGREGAR_TIRO:
-      return {
-        ...state,
-        ronda: [...state.ronda, action.payload],
-      };
 
     case MOSTRAR_SPINNER:
       return {
         ...state,
         spinner: action.payload,
       };
-    
     case SELECCIONAR_JUGADOR:
       return {
         ...state,
@@ -51,7 +44,19 @@ const jugadoresReducer = (state, action) => {
         jugadoresUsuario: state.jugadoresUsuario.filter(
           (jugador) => jugador.id !== action.payload
         ),
-      }
+      };
+    case AGREGAR_TIRO:
+      return {
+        ...state,
+        ronda: [...state.ronda, action.payload],
+        aciertoRonda: state.ronda.filter((data) => data.acierto === 'true'),
+      };
+    case OBTENER_TIROS_USUARIO:
+      return {
+        ...state,
+        tirosPorUsuario: action.payload,
+      };
+
     default:
       return state;
   }

@@ -49,12 +49,17 @@ const jugadoresReducer = (state, action) => {
       return {
         ...state,
         ronda: [...state.ronda, action.payload],
-        aciertoRonda: state.ronda.filter((data) => data.acierto === 'true'),
-      };
+        };
     case OBTENER_TIROS_USUARIO:
       return {
         ...state,
         tirosPorUsuario: action.payload,
+        porcentajeAciertoHistorico: (action.payload.filter(
+          (data) => data.acierto === "true"
+        ).length)*100,
+        porcentajeDistanciaDeTiroHistorica: (action.payload
+          .map((data) => data.distancia)
+          .reduce((a, b) => a + b, 0)),
       };
 
     default:

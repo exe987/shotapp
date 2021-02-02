@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Usuarios from "./context/usuario/usuarioState";
 import Jugadores from "./context/jugadores/jugadoresState";
@@ -14,7 +14,6 @@ function App() {
       <Usuarios>
         <Jugadores>
           <HeaderSesion />
-          
             <div className="container">
             <Switch>
               <Route exact path="/">

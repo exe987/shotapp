@@ -5,6 +5,7 @@ import {
   INICIAR_SESION,
   INICIO_SESION_EXITO,
   INICIO_SESION_ERROR,
+  RECARGAR_PAGINA,
   CERRAR_SESION
 } from "../../types/index";
 
@@ -60,7 +61,14 @@ const usuarioReducer = (state, action) => {
 			sesion: false,
 			dataSesion: null
 		}
-	}
+  }
+  case RECARGAR_PAGINA: {
+    return {
+      ...state,
+      sesion: true,
+      dataSesion: action.payload
+    }
+  }
     default:
       return state;
   }

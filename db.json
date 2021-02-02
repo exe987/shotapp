@@ -54,177 +54,84 @@
       "nombre": "50",
       "id": "33410bdd-b742-403c-b85a-148117a8bb64",
       "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "sadsd",
+      "id": "ecbdd089-f49e-45c7-9fa0-18b338deb259",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "sfef",
+      "id": "4bdacb87-780e-4076-afc8-120ecec6670e",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "Rerra Bu",
+      "id": "1db7ee2a-6545-4742-9662-098c8450acf8",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dsad",
+      "id": "663092bb-e027-47c5-b819-b3c749b68d4d",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "wds",
+      "id": "ffcf7298-bbf2-40cb-8934-c3698bfe9daa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dsa",
+      "id": "23d51bcf-7d88-48c6-a53c-751878de8873",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "sax",
+      "id": "558495ed-eb0c-42bd-a042-dd947abf3e45",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dwsd",
+      "id": "3a9d247c-dc60-4422-953a-43a49fb793d6",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "csacsa",
+      "id": "d5336b81-0367-472e-bcf0-23b3078f37d4",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "scc",
+      "id": "0b30778a-58cb-4d73-aef5-ee814f95ff4e",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dsaxs",
+      "id": "bb7fc502-44f3-4b42-98c4-89ad033934db",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "sadxas",
+      "id": "d7e89aa9-287e-4fab-8aa6-48dd8502eb0f",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "bjhbouihuoiholno",
+      "id": "be337700-0052-4aa5-90a5-f6d24e009029",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "bhnin",
+      "id": "78f358a5-c8c8-4983-8c16-d7afcd97115a",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
+    },
+    {
+      "nombre": "dwsdw",
+      "id": "374d62a1-e475-4ddd-858c-9afdf4fb02ff",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd"
     }
   ],
   "tiros": [
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 1
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "aaa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 2
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 3
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 4
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 5
-    },
-    {
-      "acierto": false,
-      "distancia": 8,
-      "nombre": "vb",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 6
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "as",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 7
-    },
-    {
-      "acierto": false,
-      "distancia": 8,
-      "nombre": "gfg",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 8
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 9
-    },
-    {
-      "acierto": false,
-      "distancia": 8,
-      "nombre": "as",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 10
-    },
-    {
-      "acierto": false,
-      "distancia": 8,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 11
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 12
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "gfg",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 13
-    },
-    {
-      "acierto": false,
-      "distancia": 2,
-      "nombre": "aaa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 14
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "gfg",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 15
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "as",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 16
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "as",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 17
-    },
-    {
-      "acierto": false,
-      "distancia": 2,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 18
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "as",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 19
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "as",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 20
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "as",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 21
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "gfg",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 22
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "wsdxsa",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 23
-    },
-    {
-      "acierto": false,
-      "distancia": 5,
-      "nombre": "gfg",
-      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
-      "id": 24
-    },
     {
       "acierto": "true",
       "distancia": 5,
@@ -455,6 +362,181 @@
       "nombre": "wsdxsa",
       "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
       "id": 57
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 58
+    },
+    {
+      "acierto": "false",
+      "distancia": 2,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 59
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 60
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 61
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 62
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 63
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 64
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 65
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 66
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 67
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 68
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 69
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "aaa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 70
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 71
+    },
+    {
+      "acierto": "false",
+      "distancia": 2,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 72
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 73
+    },
+    {
+      "acierto": "true",
+      "distancia": 2,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 74
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 75
+    },
+    {
+      "acierto": "true",
+      "distancia": 8,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 76
+    },
+    {
+      "acierto": "true",
+      "distancia": 2,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 77
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 78
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 79
+    },
+    {
+      "acierto": "true",
+      "distancia": 5,
+      "nombre": "wsdxsa",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 80
+    },
+    {
+      "acierto": "false",
+      "distancia": 5,
+      "nombre": "gfg",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 81
+    },
+    {
+      "acierto": "false",
+      "distancia": 2,
+      "nombre": "as",
+      "usuario": "ab208476-6c44-4e28-a940-621852e481fd",
+      "id": 82
     }
   ],
   "usuarios": [

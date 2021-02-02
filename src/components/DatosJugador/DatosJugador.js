@@ -56,7 +56,7 @@ const DatosJugador = () => {
         {!jugadorSeleccionado ? (
           jugadoresUsuario.map((jugador) => (
             <div
-              key={jugador.nombre}
+              key={jugador.id}
               className="column card m-2 is-3-desktop has-background-dark"
             >
               <div className="card-header-title title is-6 has-text-white">

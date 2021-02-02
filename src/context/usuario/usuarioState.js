@@ -13,6 +13,7 @@ import {
   INICIO_SESION_EXITO,
   INICIO_SESION_ERROR,
   CERRAR_SESION,
+  RECARGAR_PAGINA
 } from "../../types/index";
 
 const Usuarios = (props) => {
@@ -24,11 +25,8 @@ const Usuarios = (props) => {
     sesion: false,
     dataSesion: null,
   };
-
   const history = useHistory();
-
   const [state, dispatch] = useReducer(usuarioReducer, initialState);
-
   //FUNCION PARA CREAR USUARIO
   const creaUsuario = async (usuario) => {
     dispatch({
@@ -87,6 +85,7 @@ const Usuarios = (props) => {
       if (respuesta.contraseña === password) {
         const { nombre, id } = respuesta;
         localStorage.setItem("nombre", nombre);
+        localStorage.setItem("id", id);
         dispatch({
           type: INICIO_SESION_EXITO,
           payload: {
@@ -129,6 +128,21 @@ const Usuarios = (props) => {
       }
     });
   };
+  //FUNCION PARA NO PERDER SESION
+  const recargarPagina = async () => {
+    try {
+      const data = {}
+      data.nombre = await localStorage.getItem('nombre')
+      data.id = await localStorage.getItem('id')
+      console.log(data)
+      dispatch({
+        type: RECARGAR_PAGINA,
+        payload: data
+      });
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <UsuarioContext.Provider
       value={{
@@ -139,6 +153,7 @@ const Usuarios = (props) => {
         creaUsuario,
         iniciarSesion,
         cerrarSesion,
+        recargarPagina
       }}
     >
       {props.children}

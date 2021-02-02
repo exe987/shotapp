@@ -5,7 +5,13 @@ import UsuarioContext from "../../context/usuario/usuarioContext";
 const DatosClase = () => {
   //DATOS CONTEXT
   const jugadoresDeContext = useContext(JugadoresContext);
-  const { ronda,aciertoRonda, tirosPorUsuario, obtenerTirosPorUsuario } = jugadoresDeContext;
+  const {
+    ronda,
+    tirosPorUsuario,
+    porcentajeDistanciaDeTiroHistorica,
+    porcentajeAciertoHistorico,
+    obtenerTirosPorUsuario,
+  } = jugadoresDeContext;
   const UsuariosdeContext = useContext(UsuarioContext);
   const { dataSesion } = UsuariosdeContext;
 
@@ -14,13 +20,12 @@ const DatosClase = () => {
   let ultimoTirador;
   let ultimaDistancia;
   let porcentajeDistancia;
-  let tirosClase;
   let aciertos;
-  let errados;
   let porcentajeEfectividad;
   useEffect(() => {
     obtenerTirosPorUsuario(dataSesion.id);
-  }, []);
+    // eslint-disable-next-line
+  }, [ronda]);
 
   if (ronda.length >= 1) {
     ultimoTiro = ronda[ronda.length - 1].acierto;
@@ -29,9 +34,8 @@ const DatosClase = () => {
     porcentajeDistancia = ronda
       .map((tiros) => Number(tiros.distancia))
       .reduce((a, b) => a + b, 0);
-    aciertos = ronda.filter((data) => data.acierto === 'true')
+    aciertos = ronda.filter((data) => data.acierto === "true");
     porcentajeEfectividad = (aciertos.length * 100) / ronda.length;
-    console.log(porcentajeEfectividad)
   }
   return (
     <Fragment>
@@ -50,16 +54,21 @@ const DatosClase = () => {
           <div>
             <p className="heading">ULTIMO TIRO</p>
             {ronda.length >= 1 ? (
-              ultimoTiro ? (
-                <p className="title">Encestó</p>
+              ultimoTiro === "true" ? (
+                <p className="title is-6">
+                  {ultimoTirador.toUpperCase()} encestó desde {ultimaDistancia}{" "}
+                  m.
+                </p>
               ) : (
-                <p className="title">Erró</p>
+                <p className="title is-6">
+                  {ultimoTirador.toUpperCase()} erró desde {ultimaDistancia} m.
+                </p>
               )
             ) : (
               <p className="title">---</p>
             )}
           </div>
-        </div>0
+        </div>
         <div className="level-item has-text-centered">
           <div>
             <p className="heading">PORCENTAJE DISTANCIA</p>
@@ -72,40 +81,34 @@ const DatosClase = () => {
             )}
           </div>
         </div>
+        <div className="level-item has-text-centered">
+          <div>
+            <p className="heading">CANTIDAD DE TIROS CLASE</p>
+
+            <p className="title">{ronda.length}</p>
+          </div>
+        </div>
       </nav>
       <nav className="navbar level has-background-light">
         <div className="level-item has-text-centered">
           <div>
-            <p className="heading">ULTIMO TIRADOR</p>
-            {ronda.length >= 1 ? (
-              <p className="title">{ultimoTirador}</p>
-            ) : (
-              <p className="title">---</p>
-            )}
+            <p className="heading">EFECTIVIDAD HISTORICA</p>
+            <p className="title">
+              {(porcentajeAciertoHistorico / tirosPorUsuario.length).toFixed(2)}
+              %
+            </p>
           </div>
         </div>
+
         <div className="level-item has-text-centered">
           <div>
-            <p className="heading">ULTIMO TIRO</p>
-            {ronda.length >= 1 ? (
-              ultimoTiro ? (
-                <p className="title">Encestó</p>
-              ) : (
-                <p className="title">Erró</p>
-              )
-            ) : (
-              <p className="title">---</p>
-            )}
-          </div>
-        </div>
-        <div className="level-item has-text-centered">
-          <div>
-            <p className="heading">ULTIMA DISTANCIA</p>
-            {ronda.length >= 1 ? (
-              <p className="title">{ultimaDistancia} m.</p>
-            ) : (
-              <p className="title">---</p>
-            )}
+            <p className="heading">DISTANCIA HISTORICA</p>
+            <p className="title">
+              {(
+                porcentajeDistanciaDeTiroHistorica / tirosPorUsuario.length
+              ).toFixed(2)}{" "}
+              m.
+            </p>
           </div>
         </div>
       </nav>

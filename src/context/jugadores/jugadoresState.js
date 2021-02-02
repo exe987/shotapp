@@ -22,8 +22,9 @@ const Jugadores = (props) => {
     jugadoresUsuario: [],
     nombres: [],
     ronda: [],
-    aciertoRonda: [],
     tirosPorUsuario: [],
+    porcentajeAciertoHistorico: null,
+    porcentajeDistanciaDeTiroHistorica: null,
     spinner: false,
   };
   //REDUCER
@@ -45,11 +46,11 @@ const Jugadores = (props) => {
   //AGREGAR JUGADORES
   const agregarJugador = async (jugador) => {
     try {
+      await clienteAxios.post("./jugadores", jugador);
       dispatch({
         type: AGREGAR_JUGADOR,
         payload: jugador,
       });
-      await clienteAxios.post("./jugadores", jugador);
       Swal.fire({
         icon: "success",
         text: "Jugador creado!!",
@@ -117,18 +118,17 @@ const Jugadores = (props) => {
     }
   };
   //OBTENER TIROS POR USUARIO
-  const obtenerTirosPorUsuario = async id => {
-    const respuesta = await clienteAxios.get(`./tiros?usuario=${id}`);
+  const obtenerTirosPorUsuario = async (id) => {
     try {
+      const respuesta = await clienteAxios.get(`./tiros?usuario=${id}`);
       dispatch({
         type: OBTENER_TIROS_USUARIO,
         payload: respuesta.data,
       });
-     
     } catch (error) {
       console.log(error);
     }
-  }
+  };
   //SPINNER
   const mostrarSpinner = (estado) => {
     dispatch({
@@ -146,7 +146,9 @@ const Jugadores = (props) => {
         jugadorSeleccionado: state.jugadorSeleccionado,
         jugadoresUsuario: state.jugadoresUsuario,
         tirosPorUsuario: state.tirosPorUsuario,
-        aciertoRonda: state.aciertoRonda,
+        porcentajeDistanciaDeTiroHistorica:
+          state.porcentajeDistanciaDeTiroHistorica,
+        porcentajeAciertoHistorico: state.porcentajeAciertoHistorico,
         agregarJugador,
         seleccionarJugador,
         cancelarSeleccionarJugador,
@@ -154,7 +156,7 @@ const Jugadores = (props) => {
         mostrarSpinner,
         obtenerJugadores,
         eliminarJugador,
-        obtenerTirosPorUsuario
+        obtenerTirosPorUsuario,
       }}
     >
       {props.children}

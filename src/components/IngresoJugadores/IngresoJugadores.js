@@ -4,6 +4,8 @@ import Spinner from "../Spinner/Spinner";
 import JugadoresContext from "../../context/jugadores/jugadoresContext";
 import UsuarioContext from "../../context/usuario/usuarioContext";
 import Swal from "sweetalert2";
+
+
 const IngresoJugadores = () => {
   //DATOS CONTEXT
   const jugadoresDeContext = useContext(JugadoresContext);
@@ -18,10 +20,11 @@ const IngresoJugadores = () => {
   const UsuariosdeContext = useContext(UsuarioContext);
   const { dataSesion } = UsuariosdeContext;
 
+ 
   useEffect(() => {
     obtenerJugadores(dataSesion.id);
     // eslint-disable-next-line
-  }, [dataSesion]);
+  }, []);
 
   //ESTADOS LOCALES
   const [jugador, ingresoJugador] = useState({
@@ -69,6 +72,7 @@ const IngresoJugadores = () => {
         nombre: "",
         id: null,
       });
+      obtenerJugadores(dataSesion.id);
     }
   };
   return (

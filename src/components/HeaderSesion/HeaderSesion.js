@@ -7,6 +7,7 @@ import Signup from "../Signup/Signup";
 const HeaderSesion = () => {
   const UsuariosdeContext = useContext(UsuarioContext);
   const { dataSesion, sesion, cerrarSesion } = UsuariosdeContext;
+    
   //ESTADOS DE MODAL
   const [modal, mostrarModal] = useState(false);
   const [modalb, mostrarModalb] = useState(false);
@@ -30,6 +31,7 @@ const HeaderSesion = () => {
   const cierreDeSesion = (data) => {
     cerrarSesion(data);
   };
+ 
   return (
     <nav
       className="navbar is-dark"
